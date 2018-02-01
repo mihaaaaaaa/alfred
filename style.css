@@ -3,7 +3,9 @@ body {
 	font-family: "Trebuchet MS";
 	background-color: #f4f4f4; 
 }
-
+*{
+	box-sizing: border-box;
+}
 .alfred {
 	position: absolute;
 	top: 50%;
@@ -14,11 +16,15 @@ body {
 .alfred.-invisible {
 	opacity: 0;
 }
+.bubble.-visible {
+	opacity: 1;
 
+}
 .control-panel {
 	position: absolute;
 	top: 50%;
 	left:50%;
+	padding: 25px;
 	transform: translate(-50%);
 	width: 500px;
 	height: 250px;
@@ -28,15 +34,18 @@ body {
 }
 .bubble {
 position:absolute;
-right:-20px;
-top: -60px;
+right:-200px;
+top: -100px;
 padding: 40px;
 background-color: white;
 color: black;
 font-weight: 900;
 border-radius: 15px;
+opacity: 0;
+min-width: 140px;
+transition: 4s;
 }
-.bubble:before {
+.bubble:before .-visible{
 	position: absolute;
 	display: block;
 	content: "";
@@ -45,4 +54,27 @@ border-radius: 15px;
 	background-color: white;
 	width: 15px;
 	height: 15px;
+}
+input, button {
+border-radius: 4px;
+padding: 6px;
+font-size:13px;
+font-weight: 900;
+border: none;
+outline: none;
+}
+input{
+	margin-right:20px;
+	margin-bottom: 20px; 
+}
+button {
+	background-color: #f4f4f4;
+}
+button:hover {
+	background-color:black;
+	color: white;
+}
+button:active {
+	color: black;
+	background-color:white;
 }
